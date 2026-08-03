@@ -2,6 +2,16 @@
 
 Локальное хранилище и файлообменник на базе Debian, Apache Autoindex и Samba.
 
-### Хар-ки NAS
-Acer Aspire One - 2gb DDR2, intel atom N450.
-debian GNU/Linux 12
+## 💻 Характеристики NAS
+* **Устройство:** Acer Aspire One
+* **Процессор:** Intel Atom N450
+* **Оперативная память:** 2 GB DDR2
+* **Операционная система:** Debian GNU/Linux 12
+
+
+## 🛠 Стек
+* **Веб-интерфейс:** Apache 2
+* **Протокол обмена:** Samba (SMB) для обращения к сетевому диску
+
+## 📜 Лицензия
+проект защищен лицензией **The Unlicense**.
