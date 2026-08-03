@@ -1,2 +1,4 @@
 # my-local-nas
-локальное хранилище через apache autoindex
+
+Локальное хранилище и файлообменник на базе Debian, Apache Autoindex и Samba.
+
