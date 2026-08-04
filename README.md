@@ -37,7 +37,7 @@ sudo systemctl restart smbd apache2
 Добавляем пользователя в **Samba**:
 
 ```
-sudo smbpasswd -a \$USER
+sudo smbpasswd -a $USER
 ```
 (Вместо `$USER` можно вписать конкретное имя пользователя)
 
