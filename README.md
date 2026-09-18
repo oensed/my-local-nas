@@ -2,6 +2,10 @@
 
 Локальное хранилище и файлообменник на базе Debian, Apache Autoindex и Samba.
 
+![Debian](https://img.shields.io/badge/Debian-%23D70A53.svg?style=for-the-badge&logo=debian&logoColor=white)
+![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
+
+
 ### 🌍 Актуальность проекта
 Данная сборка незаменима в условиях **ограничения интернета, блокировок и жесткой цензуры**.
 сервер разворачивается полностью локально.
