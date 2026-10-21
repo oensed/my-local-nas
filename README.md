@@ -1,6 +1,6 @@
 # my-local-nas
 
-Локальное хранилище и файлообменник на базе Debian, Apache Autoindex и Samba.
+Локальное хранилище и файлообменник на базе Debian, Apache и Samba.
 
 ![Debian](https://img.shields.io/badge/Debian-%23D70A53.svg?style=for-the-badge&logo=debian&logoColor=white)
 ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white)
@@ -24,14 +24,14 @@ p.s.: Если этот репозиторий помог вам, пожалуй
 
 ## 🛠 Стек
 * **Веб-интерфейс:** Apache 2
-* **Протокол обмена:** Samba (SMB) для обращения к сетевому диску
+* **Протокол обмена:** Samba (SMB) для обращения к сетевой папке
 
 ## 📜 Лицензия
 проект защищен лицензией **The Unlicense**.
 
 ---
 
-## Установка
+## Ручная установка
 
 
 ```
@@ -42,7 +42,6 @@ sudo apt update && sudo apt install -y samba apache2
 ```
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 775 /var/www/html/
-sudo systemctl restart smbd apache2
 ```
 Добавляем пользователя в **Samba**:
 
@@ -51,14 +50,16 @@ sudo smbpasswd -a $USER
 ```
 (Вместо `$USER` можно вписать конкретное имя пользователя)
 
-Если хотите установить сверху **phpsysinfo** то устанавливаем модули:
-
+Добавляем блок с названием сетевой папки: (пример)
 ```
-sudo apt install -y php libapache2-mod-php
-
-sudo apt install -y php-xml
-
-sudo systemctl restart apache2
+[www-share]
+   comment = Apache Web Root
+   path = /var/www/html
+   browseable = yes
+   writable = yes
+   valid users = @smbgroup, user1
+   force user = www-data
+   force group = www-data
+   create mask = 0664
+   directory mask = 0775
 ```
-После этого можете создавать под **phpsysinfo** отдельную папку.
-
